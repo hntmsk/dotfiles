@@ -1,6 +1,5 @@
 " txt code
 set fileencoding=utf-8
-
 " very masic
 :nnoremap /  /\v
 
@@ -39,6 +38,7 @@ NeoBundle 'freitass/todo.txt-vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'open-browser.vim'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
  call neobundle#end()
 
@@ -52,7 +52,7 @@ let g:session_autoload = 'no'
 let g:session_autosave = 'yes' 
 let g:session_autosave_periodic = 3  
 
-colorscheme  hybrid "カラースキーム初期設定
+colorscheme  jellybeans"カラースキーム初期設定
 syntax on   "カラー表示
 au BufRead,BufNewFile *.md set filetype=markdown " markdown
 " ----------------------------------------
@@ -111,6 +111,8 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 set foldmethod=marker " 折りたたみ 
 
+
+
 "open-browser.vim"
 let g:netrw_nogx = 1
 nmap gx <Plug>(openbrowser-smart-search)
@@ -125,3 +127,7 @@ let g:user_emmet_settings = {
     \   'indentation': '  '
     \ }
 
+"nathanaelkane/vim-indent-guides
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size = 1

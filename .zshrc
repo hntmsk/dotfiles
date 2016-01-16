@@ -6,9 +6,24 @@ export PATH=$PATH:~/sh
 
 #------------------------------------------------------------------
 ##オプション補完タブのスイッチを入れる
-#compinit
 autoload -Uz compinit
+compinit
+zstyle ':completion:*:default' menu select=2  #補完ハイライト
+bindkey "^[[Z" reverse-menu-complete  #shift-tabで補完逆順
 
+#補完機能強化
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
+zstyle ':completion:*:messages' format '%F{YELLOW}%d'$DEFAULT
+zstyle ':completion:*:warnings' format '%F{RED}No matches for:''%F{YELLOW} %d'$DEFAULT
+zstyle ':completion:*:descriptions' format '%F{YELLOW}completing %B%d%b'$DEFAULT
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAULT
+# マッチ種別を別々に表示
+zstyle ':completion:*' group-name ''
+# セパレータを設定する
+zstyle ':completion:*' list-separator '-->'
+zstyle ':completion:*:manuals' separate-sections true
 #predict-on
 autoload predict-on
 
