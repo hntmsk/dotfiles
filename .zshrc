@@ -3,8 +3,14 @@
 export LANG=ja_JP.UTF-8;
 export EDITOR='vim' 
 export PATH=$PATH:~/sh
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
+
+# pyenv
+export PYENV_ROOT="${HOME}/.pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init -)"
+fi
+
 #------------------------------------------------------------------
 ##オプション補完タブのスイッチを入れる
 autoload -Uz compinit
