@@ -117,6 +117,8 @@ alias top10='du -m -d1 ./*|sort -nr|head -10'
 alias lsd='ls -F | grep /'
 alias lsf='ls -F | grep -v /'
 alias htop='sudo htop'
+alias pc='pbcopy'
+alias pp='pbpaste'
 
 #todo.txt
 alias todo='vim ~/.vim/bundle/todo.txt-vim/{todo,done}.txt'
@@ -225,3 +227,4 @@ function t2j(){
 mogrify -format JPG *.TIF
 mkdir ../JPG;mv *.JPG ../JPG
 }
+

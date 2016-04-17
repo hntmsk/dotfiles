@@ -23,7 +23,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundleFetch 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
@@ -47,8 +47,8 @@ NeoBundle 'deris/vim-rengbang'
 NeoBundle 'freitass/todo.txt-vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'open-browser.vim'
-NeoBundle 'rking/ag.vim'
 NeoBundle 'thinca/vim-quickrun'
+
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 
@@ -143,3 +143,18 @@ noremap   <Down>   <nop>
 noremap   <Left>   <nop>
 noremap   <Right>  <nop>
 
+"Unite vim
+"let g:unite_enable_start_insert=1
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
+nnoremap <silent> <C-u>u :<C-u>Unite<CR>
+nnoremap <silent> <C-u>b :<C-u>Unite buffer<CR>
+nnoremap <silent> <C-u>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+
+" unite grepにhw(highway)を使う
+if executable('hw')
+  let g:unite_source_grep_command = 'hw'
+  let g:unite_source_grep_default_opts = '--no-group --no-color'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+ 
