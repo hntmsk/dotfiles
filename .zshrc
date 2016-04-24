@@ -4,9 +4,9 @@ export LANG=ja_JP.UTF-8;
 export EDITOR='vim' 
 export PATH=$PATH:~/sh
 
-# pyenv
- if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
- 
+export PYENV_ROOT=/usr/local/var/pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
 #------------------------------------------------------------------
 ##オプション補完タブのスイッチを入れる
 autoload -Uz compinit
@@ -115,6 +115,9 @@ alias lsf='ls -F | grep -v /'
 alias htop='sudo htop'
 alias pc='pbcopy'
 alias pp='pbpaste'
+alias op='open `pwd`'
+alias odl='open ~/Downloads'
+alias odb='open ~/Dropbox'
 
 #todo.txt
 alias todo='vim ~/.vim/bundle/todo.txt-vim/{todo,done}.txt'
@@ -211,7 +214,7 @@ alias odl='open ~/Downloads'
 alias odb='open ~/Dropbox'
 
 cddir(){
-cd $( find `pwd` -type d | peco )
+cd $( find `pwd` -type d -iname '.*' -prune -o -type d | peco )
 }
 
 #リサイズ高画質版
