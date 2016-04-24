@@ -46,8 +46,8 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'deris/vim-rengbang'
 NeoBundle 'freitass/todo.txt-vim'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'open-browser.vim'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'tyru/open-browser.vim'
 
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
