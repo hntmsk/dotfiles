@@ -4,7 +4,6 @@ export LANG=ja_JP.UTF-8;
 export EDITOR='vim' 
 export PATH=$PATH:~/sh
 
-export PYENV_ROOT=/usr/local/var/pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 #------------------------------------------------------------------
