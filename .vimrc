@@ -6,18 +6,14 @@ set fileencoding=utf-8
 " very masic
 :nnoremap /  /\v
 
-let g:session_autoload = 'no' 
-let g:session_autosave = 'yes' 
-let g:session_autosave_periodic = 3  
-
 "
 " vim-plug
 "
 call plug#begin('~/.vim/plugged')
 
-Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 Plug 'tomasr/molokai'
 Plug 'nanotech/jellybeans.vim'
@@ -41,7 +37,6 @@ call plug#end()
 "
 colorscheme  jellybeans
 syntax on   
-
 au BufRead,BufNewFile *.md set filetype=markdown " markdown
 
 " 画面表示の設定
@@ -130,6 +125,10 @@ noremap <Leader>o <ESC>:Unite -vertical -winwidth=40 outline<Return>
 " autosave
 "
 let g:auto_save = 1   
+let g:session_autoload = 'no' 
+let g:session_autosave = 'yes' 
+let g:session_autosave_periodic = 3  
+let g:auto_save_in_insert_mode = 0
 
 "矢印キー無効
 vnoremap  <Up>     <nop>
@@ -144,3 +143,5 @@ noremap   <Up>     <nop>
 noremap   <Down>   <nop>
 noremap   <Left>   <nop>
 noremap   <Right>  <nop>
+
+
