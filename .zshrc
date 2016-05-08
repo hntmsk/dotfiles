@@ -2,7 +2,8 @@
 
 export LANG=ja_JP.UTF-8;
 export EDITOR='vim' 
-export PATH=$PATH:~/sh
+export PATH=$PATH:$HOME/sh
+export GOPATH=$HOME/.go
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
@@ -49,11 +50,17 @@ export LS_COLORS='di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43
 # 補完候補もLS_COLORSに合わせて色が付くようにする
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-# lsがカラー表示になるようエイリアスを設定
+# Osタイプ別のエイリアス設定
 case "${OSTYPE}" in
 darwin*)
   # Mac
   alias ls="ls -GF"
+  alias htop='sudo htop'
+  alias pc='pbcopy'
+  alias pp='pbpaste'
+  alias op='open `pwd`'
+  alias odl='open ~/Downloads'
+  alias odb='open ~/Dropbox'
   ;;
 linux*)
   # Linux
@@ -111,15 +118,10 @@ alias top10='du -m -d1 ./*|sort -nr|head -10'
 #ls only directory or not
 alias lsd='ls -F | grep /'
 alias lsf='ls -F | grep -v /'
-alias htop='sudo htop'
-alias pc='pbcopy'
-alias pp='pbpaste'
-alias op='open `pwd`'
-alias odl='open ~/Downloads'
-alias odb='open ~/Dropbox'
 
 #todo.txt
-alias todo='vim ~/.vim/bundle/todo.txt-vim/{todo,done}.txt'
+#alias todo='vim ~/.vim/bundle/todo.txt-vim/{todo,done}.txt'
+alias todo='vim ~/.vim/plugged/todo.txt-vim/{todo,done}.txt'
 
 #function
 #------------------------------------------------------------------
@@ -208,9 +210,6 @@ kushi() {
   open -a Google\ Chrome http://www.amazon.co.jp/s/$opt_a
   open -a Google\ Chrome http://search.rakuten.co.jp/search/mall/${str}/-/
 }
-
-alias odl='open ~/Downloads'
-alias odb='open ~/Dropbox'
 
 cddir(){
 cd $( find `pwd` -type d -iname '.*' -prune -o -type d | peco )
