@@ -29,6 +29,8 @@ Plug 'tpope/vim-surround'
 Plug 'thinca/vim-quickrun'
 Plug 'itchyny/calendar.vim'
 Plug 'tyru/open-browser.vim'
+Plug 'vim-scripts/visSum.vim'
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
