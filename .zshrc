@@ -5,8 +5,6 @@ export EDITOR='vim'
 export PATH=$PATH:$HOME/sh
 export GOPATH=$HOME/.go
 
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
 #------------------------------------------------------------------
 ##オプション補完タブのスイッチを入れる
 autoload -Uz compinit
@@ -225,3 +223,4 @@ mogrify -format JPG *.TIF
 mkdir ../JPG;mv *.JPG ../JPG
 }
 
+alias BackupKindleData='cp -rv ~/Library/Application\ Support/Kindle/My\ Kindle\ Content/* ~/Desktop/BackUpKindleData'

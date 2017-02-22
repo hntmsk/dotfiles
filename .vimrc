@@ -1,10 +1,9 @@
 let mapleader = "\<Space>"
 let maplocalleader = "\<Space>"
-
-" txt code
 set fileencoding=utf-8
 " very masic
 :nnoremap /  /\v
+set background=dark
 
 "
 " vim-plug
@@ -15,10 +14,13 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
+Plug 'itchyny/lightline.vim'
 Plug 'tomasr/molokai'
 Plug 'nanotech/jellybeans.vim'
 Plug 'w0ng/vim-hybrid'
-Plug 'itchyny/lightline.vim'
+Plug 'sjl/badwolf'
+Plug 'vim-scripts/twilight'
+Plug 'morhetz/gruvbox'
 
 Plug 'davidoc/taskpaper.vim'
 Plug 'vim-scripts/vim-auto-save'
@@ -31,13 +33,15 @@ Plug 'itchyny/calendar.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-scripts/visSum.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'kien/ctrlp.vim'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
 "
 " ColorScheme
 "
-colorscheme  jellybeans
+colorscheme gruvbox
 syntax on   
 au BufRead,BufNewFile *.md set filetype=markdown " markdown
 
@@ -146,4 +150,17 @@ noremap   <Down>   <nop>
 noremap   <Left>   <nop>
 noremap   <Right>  <nop>
 
+"
+"vim-easy-align
+"
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
+"timestamp
+nmap <F6> <ESC>i<C-R>=strftime("%y-%m-%d %H:%M:%S")<CR><Space>
+imap <F6> <ESC>i<C-R>=strftime("%y-%m-%d %H:%M:%S")<CR><Space>
+
+"シンタックスハイライトテスト
+au BufRead,BufNewFile *.txt set filetype=txt
